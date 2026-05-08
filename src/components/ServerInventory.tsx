@@ -749,7 +749,7 @@ export default function ServerInventory() {
   const [isDictFormView, setIsDictFormView] = useState(false);
   const [editingDictEntry, setEditingDictEntry] = useState<GpuDictionaryEntry | null>(null);
 
-  // GPU 字典搜索状态 (升级为多选)
+  // 标准槽位字典搜索状态 (升级为多选)
   const [gpuDictSearch, setGpuDictSearch] = useState({
     packages: [] as string[],
     models: [] as string[],
@@ -1564,7 +1564,7 @@ export default function ServerInventory() {
             批量更新
           </Button>
 
-          {/* 5. GPU 槽位配置 (字典管理) */}
+          {/* 5. 标准槽位管理 (字典管理) */}
           <Button 
             variant="default" 
             className="h-10 px-4 rounded-xl bg-slate-900 hover:bg-indigo-600 font-bold gap-2 shadow-lg shadow-indigo-100 transition-all active:scale-95 shrink-0"
@@ -1575,7 +1575,7 @@ export default function ServerInventory() {
             }}
           >
             <Zap className="w-4 h-4 text-amber-400" />
-            GPU 槽位配置
+            标准槽位管理
           </Button>
 
           <div className="w-[1px] h-6 bg-slate-200 mx-1" />
@@ -2537,7 +2537,7 @@ export default function ServerInventory() {
         </DialogContent>
       </Dialog>
 
-      {/* GPU 槽位配置 (标准配置字典) Dialog */}
+      {/* 标准槽位字典管理 (标准配置字典) Dialog */}
       <Dialog open={isGpuDictOpen} onOpenChange={(val) => {
         setIsGpuDictOpen(val);
         if(!val) {
@@ -2550,7 +2550,7 @@ export default function ServerInventory() {
           <header className={`p-6 text-white relative transition-colors duration-500 ${isDictFormView ? 'bg-indigo-600' : 'bg-gradient-to-r from-indigo-900 via-indigo-800 to-indigo-900 group'}`}>
              <div className="relative z-10 flex items-center justify-between">
                 <div className="flex flex-col gap-0.5">
-                   <DialogTitle className="text-xl font-black tracking-tight">GPU 标准槽位字典管理</DialogTitle>
+                   <DialogTitle className="text-xl font-black tracking-tight">标准槽位字典管理</DialogTitle>
                 </div>
                 {!isDictFormView && (
                    <div className="flex items-center gap-4">
@@ -3505,7 +3505,7 @@ export default function ServerInventory() {
         </DialogContent>
       </Dialog>
 
-      {/* GPU 字典操作日志 Dialog */}
+      {/* 标准槽位字典操作日志 Dialog */}
       <Dialog open={isDictLogOpen} onOpenChange={setIsDictLogOpen}>
         <DialogContent className="sm:max-w-[450px] rounded-[32px] p-0 overflow-hidden border-none shadow-2xl bg-white focus:outline-none">
           <header className="bg-slate-900 px-6 py-5 text-white flex items-center gap-3">
